@@ -1,0 +1,38 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+{% load static %}
+    <head>
+        <title>
+            TodoWoo!
+        </title>
+    </head>
+    {% if user.is_authenticated %}
+    <h2 class="text-center display-4">Welcome, <b>{{user.username}}</b></h2>
+    <div class="container mt-5">
+        <h2 class="text-center mb-5">Manage Your Todos!</h2>
+        <div class="row">
+            <div class="col-4 text-center">
+            <a href="{% url 'createtodos' %}"><button class="btn btn-block btn-outline-success"><h4>Create Todos</h4></button></a>
+            </div>
+            <div class="col-4 text-center">
+            <a href="{% url 'currenttodos' %}"><button class="btn btn-block btn-outline-dark"><h4>Current Todos</h4></button></a>
+            </div>
+            <div class="col-4 text-center">
+            <a href="{% url 'completedtodos' %}"><button class="btn btn-block btn-outline-info"><h4>Completed Todos</h4></button></a>
+            </div>
+        </div>  
+    </div>
+    {% else %}
+    <div class="text-center mb-5">
+        <h1>TodoWoo</h1>
+        <img src="{% static 'bower-logo.png' %}" height="100px" width="100px" />
+    </div>
+    <h2 class="text-center mt-3">
+        <a href="{% url 'loginuser' %}">Login</a> or 
+        <a href="{% url 'signupuser' %}">Signup</a>
+        to continue using TodoWoo!
+    </h2>
+    {% endif %}
+
+{% endblock %}

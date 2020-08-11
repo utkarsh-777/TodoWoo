@@ -1,0 +1,26 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+{% load static %}
+<head>
+    <title>
+        Login
+    </title>
+</head>
+
+<h1 class="display-4 text-center mb-4"><img src="{% static 'bower-logo.png' %}" height="55px" width="60px" class="mr-2" />TodoWoo!</h1>
+<div class="container border">
+    <form method="POST" class="p-2">
+    <h1 class="mb-4">Login</h1>
+    <h3 class="m-2">{{ error }}</h3>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-success" type="submit">Login</button>
+    </form>
+    <p class="text-center mt-3">
+    <a href="{% url 'loginuser' %}">Login</a> <a>or</a>
+    <a href="{% url 'signupuser' %}">Signup</a>
+    </p>
+</div>
+
+{% endblock %}

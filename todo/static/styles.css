@@ -1,0 +1,80 @@
+body{
+    background-color: beige;
+}
+
+h1{
+    font-family: 'Lobster',cursive;
+}
+
+h2{
+    font-family: 'Lobster',cursive;
+}
+
+h4{
+    font-family: 'Lobster',cursive;
+}
+
+#ddl{
+    font-family: 'Lobster',cursive;
+}
+
+label{
+    font-family: 'Lobster',cursive;
+    margin-right: 1%;
+}
+
+#id_Title{
+    width: 100%;
+    border-width: 4px;
+    border-color: blueviolet;
+}
+
+#id_Description{
+    width: 100%;
+    border-width: 4px;
+    border-color: blueviolet;
+}
+
+#id_Important{
+    border-width: 4px;
+    border-color: blueviolet;
+}
+
+#id_username{
+    width: 100%;
+    border-width: 4px;
+    border-color: blueviolet;
+}
+
+#id_password{
+    width: 100%;
+    border-width: 4px;
+    border-color: blueviolet;
+}
+
+#id_password1{
+    width: 100%;
+    border-width: 4px;
+    border-color: blueviolet;
+}
+#id_password2{
+    width: 100%;
+    border-width: 4px;
+    border-color: blueviolet;
+}
+
+button{
+    font-family: 'Lobster',cursive;
+}
+
+.helptext{
+    font-family: 'Lobster';
+}
+
+li{
+    font-family: 'Lobster';
+}
+
+a{
+    font-family: 'Lobster';
+}

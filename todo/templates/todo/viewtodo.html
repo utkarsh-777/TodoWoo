@@ -1,0 +1,30 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+<head>
+    <title>
+        Edit Todos
+    </title>
+</head>
+
+<div class="container border">
+    <h1 class="mb-4 mt-2">Edit Your Todos!</h1>
+        <form method="POST" class="p-2">
+        {{ error }}
+        {{ form.as_p }}
+            {% csrf_token %}
+            <button class="btn btn-sm btn-outline-success" type="submit"><h4>Save Todo</h4></button>
+        </form>
+
+        <form class="p-2" method="POST" action="{% url 'completetodo' todo.id %}">
+            {% csrf_token %}
+            <button class="btn btn-sm btn-outline-info" type="submit"><h4>Mark As Complete</h4></button>
+        </form>
+
+        <form class="p-2" method="POST" action="{% url 'deletetodo' todo.id %}">
+            {% csrf_token %}
+            <button class="btn btn-sm btn-outline-danger" type="submit"><h4>Delete Todo</h4></button>
+        </form>
+</div>
+
+{% endblock %}

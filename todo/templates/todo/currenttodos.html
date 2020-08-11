@@ -1,0 +1,38 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
+<head>
+    <title>
+        Current Todos
+    </title>
+</head>
+
+<div class="container">
+    <h1 class="mb-4">Current Todos</h1>
+    <ul>
+        {% if todos %}
+        {% for todo in todos %}
+        <li class="mb-2">
+            {% if todo.Important %}<div class="bg-danger rounded p-2">{% endif %}
+            <h2>
+                <a href="{% url 'viewtodo' todo.id %}">
+                {% if todo.Important %}<b>{% endif %}{{todo.Title}}{% if todo.Important %}</b>{% endif %}
+                </a>
+            </h2>
+            <h4>
+                <p>{{todo.Description}}</p>
+            </h4>
+            {% if todo.Important %}</div>{% endif %}
+        </li>
+        {% endfor %}
+
+        {% else %}
+
+        <h2>No Todos! <p><a href="{% url 'createtodos' %}">Create Some?</a></p></h2>
+
+        {% endif %}
+    </ul>
+</div>
+
+{% endblock %}
